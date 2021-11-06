@@ -1,0 +1,77 @@
+<br>
+
+<div *ngIf="this.dataSource.length!==0">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Product Image Column -->
+    <ng-container matColumnDef="product">
+      <th mat-header-cell *matHeaderCellDef> Product </th>
+      <td mat-cell *matCellDef="let item"> <img src="{{item.image}}"></td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let item"> {{item.region}} {{item.year}} </td>
+      <td mat-footer-cell *matFooterCellDef> Total </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let item"> {{item.price | currency}} </td>
+      <td mat-footer-cell *matFooterCellDef> {{grandTotal | currency}} </td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="remove-item">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let item"> <button mat-stroked-button color="warn" (click)="removeItem(item)">Remove Item</button></td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+
+  </table>
+
+  <div *ngIf="this.dataSource.length!==0" class="demo-button-container">
+    <button mat-raised-button routerLink="/products" class="demo-button" color="primary">
+      Shop More
+    </button>
+    <button
+        mat-raised-button
+        [disabled]="!this.dataSource.length"
+        color="accent"
+        (click)="emptyCart()"
+        class="demo-button">
+      Empty Cart
+    </button>
+    <button mat-raised-button class="demo-button" color="warn" [disabled]="!this.dataSource.length" (click)="checkoutCart()">
+      Checkout
+    </button>
+  </div>
+
+
+</div>
+
+
+
+
+<ng-container *ngIf="this.dataSource.length===0">
+  <div class="empty-cart">
+    <mat-card class="example-card">
+      <br>
+      <img mat-card-image class="empty-cart-image" src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90">
+      <mat-card-content>
+        <h3>Your cart is empty!</h3>
+      </mat-card-content>
+      <button mat-raised-button color="warn" routerLink="/products" class="shop-now-btn">Shop Now</button>
+    </mat-card>
+  </div>
+</ng-container>

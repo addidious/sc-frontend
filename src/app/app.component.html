@@ -1,0 +1,48 @@
+<!-- <app-header [inputSideNav]="sideNav"></app-header> -->
+<mat-toolbar class="mat-elevation-z6">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sideNav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>RECs Marketplace</span>
+    <span class="spacer"></span>
+
+    <a mat-button routerLink='/home'>Home</a>
+    <a mat-button routerLink='/dashboard'>Dashboard</a>
+    <a mat-button routerLink='/products'>Products</a>
+    <a mat-button routerLink='/cart' matBadge='{{totalItem}}' matBadgeOverlap="true" matBadgePosition="before" matBadgeSize="small">
+      <!-- <span *ngIf="totalItem!=0" matBadge='{{totalItem}}' matBadgeOverlap="true" matBadgePosition="after" matBadgeSize="small"></span> -->
+      Cart</a>
+    <button mat-raised-button color="warn" routerLink='/login' *ngIf="!isLoggedIn">Login</button>
+    <button mat-raised-button color="primary" routerLink='/home' *ngIf="isLoggedIn" (click)='logout()'>Logout</button>
+    <a mat-button *ngIf="!isLoggedIn">Sign Up</a>
+
+    <!-- <button mat-icon-button>
+      <mat-icon (click)="sideNav.toggle()">menu</mat-icon>
+    </button> -->
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sideNav mode="side" opened class="sidenav">
+    <app-side-nav></app-side-nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <div class="main-container" fxLayout="column">
+  <div
+  gdAreas="header header | side content | footer footer"
+  gdGap="16px"
+  gdRows="auto auto auto">
+  </div>
+
+
+  <div class="sidenav-container">
+
+  </div>
+
+</div> -->
+

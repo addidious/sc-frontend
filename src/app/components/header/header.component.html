@@ -1,0 +1,142 @@
+<mat-toolbar class="mat-elevation-z6">
+  <button mat-icon-button (click)="toggleSidebar()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>REC Marketplace</span>
+  <span class="spacer"></span>
+
+  <a mat-button>Home</a>
+  <a mat-button>Services</a>
+  <a mat-button>Products</a>
+  <button mat-raised-button color="warn">Login</button>
+  <a mat-button>Sign Up</a>
+
+  <!--
+  <mat-icon class="mat-icon" aria-hidden="false" aria-label="Account icon">account_circle</mat-icon>
+  <button mat-raised-button color="primary">Login</button>
+  <button mat-button>Sign Up</button>
+  <div class="example-button-row">
+    <div class="user-profile">
+      <ul class="user-profile">
+        <li>
+          <button
+            mat-button
+            [matMenuTriggerFor]="menu"
+            class="user mt-2 d-flex align-items-center"
+          >
+            <mat-icon>account_circle</mat-icon>
+            User Name
+            <mat-icon class="user-image-icon ml-1"
+              >keyboard_arrow_down</mat-icon
+            >
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              Logout
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+
+</mat-toolbar>
+
+<!-- <mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <ng-container *ngIf="(user.pictureUrl$ | async) as pictureUrl">
+        <div class="avatar_inside">
+
+          <img class="user-avatar" [src]="pictureUrl">
+        </div>
+      </ng-container>
+
+      <a href="#" routerLink="/" mat-list-item>
+        <span>Exchanges</span>
+      </a>
+
+      <a routerLink="/create-user" mat-list-item>
+        <span>Create user</span>
+      </a>
+
+      <a routerLink="about" mat-list-item>
+        <span>About</span>
+      </a>
+
+      <a routerLink="login" *ngIf="user.isLoggedOut$ | async" mat-list-item>
+        <mat-icon>person_add</mat-icon>
+        <span>Register</span>
+      </a>
+
+      <a routerLink="login" *ngIf="user.isLoggedOut$ | async" mat-list-item>
+        <mat-icon>account_circle</mat-icon>
+        <span>Login</span>
+      </a>
+
+      <a *ngIf="user.isLoggedIn$ | async" (click)="logout()" mat-list-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </a>
+
+      <a (click)="sidenav.toggle()" mat-list-item>
+        <mat-icon>close</mat-icon> Close
+      </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span style="vertical-align: middle;">APPLICATION</span>
+      <mat-icon style="vertical-align: middle;">volunteer_activism</mat-icon>
+
+      <div fxShow="true" fxHide.lt-md="true" class="navbar">
+        <div>
+          &nbsp;
+          <span style="font-weight: bold;">|</span>
+          &nbsp;
+          <a href="#" routerLink="/">
+            <span>Exchanges</span>
+          </a>
+          <a routerLink="/create-user">
+            <span>Create user</span>
+          </a>
+
+          <a routerLink="about">
+            <span>About</span>
+          </a>
+
+        </div>
+
+        <div>
+          <ng-container *ngIf="(user.pictureUrl$ | async) as pictureUrl">
+
+            <img class="user-avatar" [src]="pictureUrl">
+
+          </ng-container>
+
+
+          <a routerLink="login" *ngIf="user.isLoggedOut$ | async">
+            <mat-icon>person_add</mat-icon>
+            <span>Register</span>
+          </a>
+
+          <a routerLink="login" *ngIf="user.isLoggedOut$ | async">
+            <mat-icon>account_circle</mat-icon>
+            <span>Login</span>
+          </a>
+
+          <a *ngIf="user.isLoggedIn$ | async" (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+          </a>
+        </div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar> -->
+

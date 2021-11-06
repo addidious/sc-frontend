@@ -1,0 +1,51 @@
+<mat-nav-list>
+  <div *ngIf="isLoggedIn" class="profile-card">
+      <div class="header">
+          <h2>{{username}}</h2>
+          <h4>example@gmail.com</h4>
+      </div>
+      <img src="./assets/images/angular2-logo.png">
+  </div>
+
+  <mat-divider *ngIf="isLoggedIn"></mat-divider>
+
+  <a mat-list-item routerLink="/home">
+    <mat-icon>home</mat-icon>
+    Home
+  </a>
+  <a mat-list-item routerLink="/dashboard">
+    <mat-icon>dashboard</mat-icon>
+    Dashboard
+  </a>
+  <a mat-list-item routerLink="/products">
+    <mat-icon>search</mat-icon>
+    Products
+  </a>
+  <a mat-list-item routerLink="/cart">
+    <mat-icon>shopping_cart</mat-icon>
+    Cart
+  </a>
+<!--
+  <mat-divider></mat-divider>
+
+  <h2 matSubheader>Tools</h2>
+
+  <a mat-list-item routerLink="/contacts">
+      <mat-icon>import_contacts</mat-icon>
+      Contacts
+  </a>
+
+  <a mat-list-item routerLink="/contacts">
+      <mat-icon>contact_phone</mat-icon>
+      Leads
+  </a> -->
+
+</mat-nav-list>
+
+<!-- <div class="sidenav-content">
+  <ul class="nav">
+    <li><a routerLink="/home"><mat-icon>home</mat-icon>Home</a></li>
+    <li><a routerLink="/dashboard">Dashboard</a></li>
+    <li><a routerLink="/products">Products</a></li>
+  </ul>
+</div> -->

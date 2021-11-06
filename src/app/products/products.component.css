@@ -1,0 +1,19 @@
+.row{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.example-card {
+  max-width: 300px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 16px 0px 16px;
+}
+
+mat-card-actions{
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+

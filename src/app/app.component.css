@@ -1,0 +1,19 @@
+.spacer{
+  flex: 1 1 auto;
+}
+
+.sidenav-container{
+  height: calc(100vh - 64px);
+}
+
+.sidenav{
+  width: 20%;
+  display: flex;
+  border-right: none;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-toolbar{
+  background: #e0e5ef;
+}

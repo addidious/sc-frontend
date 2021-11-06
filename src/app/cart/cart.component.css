@@ -1,0 +1,49 @@
+table {
+  width: 90%;
+  margin: auto;
+}
+
+h3{
+  text-align: center;
+}
+
+.empty-cart{
+  width:70%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.empty-cart-image{
+  height: 200px;
+}
+
+.example-card{
+  padding: 16px 166px 16px 166px;
+}
+
+.shop-now-btn{
+  display: flex;
+  justify-self: center;
+  margin: auto;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+.demo-button-container {
+  padding-top: 16px;
+}
+
+.demo-button + .demo-button {
+  margin-left: 8px;
+}
+
+.demo-button-container{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: end;
+}
+
