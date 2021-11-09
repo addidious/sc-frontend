@@ -1,7 +1,6 @@
-import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y/input-modality/input-modality-detector';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
 import { ProductDetails } from './product-details.model';
 
 @Injectable({
@@ -10,8 +9,7 @@ import { ProductDetails } from './product-details.model';
 export class ProductDetailsService {
 
   constructor(private http:HttpClient) { }
-  // readonly baseURL = 'https://fakestoreapi.com/products';
-  readonly baseURL = 'https://4615-138-75-155-224.ngrok.io';
+  readonly baseURL = 'https://74ab-138-75-155-224.ngrok.io';
 
 
   formData: ProductDetails = new ProductDetails();
@@ -71,12 +69,9 @@ export class ProductDetailsService {
   // }
 
   refreshList(){
-    // this.http.get(this.baseURL+'/api/energygeneration')
-    //           .toPromise()
-    //           .then(res=>{
-    //             this.list = res as ProductDetails[];
-    //           });
-    return this.list= [
+    return this.http.get<ProductDetails[]>(this.baseURL+'/api/energygeneration');
+
+    return of([
       {
           "id": 1,
           "price": 197.70,
@@ -217,7 +212,7 @@ export class ProductDetailsService {
           "total": 373.5,
           "image": "https://2776-138-75-155-224.ngrok.io/images/energy.jpeg"
       }
-  ];
+  ]);
   }
 
 }

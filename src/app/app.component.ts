@@ -1,3 +1,4 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { ProductDetailsService } from './shared/product-details.service';
 import { UserService } from './shared/user.service';
@@ -26,18 +27,4 @@ export class AppComponent implements OnInit{
     this.service.logout();
     location.reload();
   }
-  // openDialog(){
-  //   const dialogRef = this.dialog.open(DialogContent)
-
-  //   dialogRef.afterClosed().subscribe(result=>{
-  //     console.log(`Dialog result: ${result}`)
-  //   });
-  // }
 }
-
-
-// @Component({
-//   selector: 'dialog-content',
-//   templateUrl: 'dialog-content.html',
-// })
-// export class DialogContent{}

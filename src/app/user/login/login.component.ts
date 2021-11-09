@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -51,7 +52,7 @@ export class LoginComponent implements OnInit {
         location.reload();
       },
       err=>{
-        this._snackBar.open("Incorrect username or password.")
+        this._snackBar.open("Incorrect username or password.",'',{duration:2000});
       }
     );
   }
